@@ -1,5 +1,5 @@
-// ============================================================
-// Supabase client — all DB calls go through this file
+﻿// ============================================================
+// Supabase client â€” all DB calls go through this file
 // ============================================================
 
 import { createClient } from '@supabase/supabase-js'
@@ -160,6 +160,41 @@ export async function markNotificationRead(id: string) {
 
 export async function createNotification(notification: Record<string, unknown>) {
   return supabase.from('notifications').insert(notification)
+}
+
+// ---- Fees helpers ----
+
+export async function getAllFees() {
+  return supabase.from('fees').select('*').order('created_at', { ascending: false })
+}
+
+export async function getStudentFees(studentId: string) {
+  return supabase
+    .from('fees')
+    .select('*')
+    .eq('student_id', studentId)
+    .order('due_date', { ascending: false })
+}
+
+export async function insertFee(fee: Record<string, unknown>) {
+  return supabase.from('fees').insert(fee).select().single()
+}
+
+export async function updateFee(id: string, updates: Record<string, unknown>) {
+  return supabase.from('fees').update(updates).eq('id', id).select().single()
+}
+
+export async function deleteFee(id: string) {
+  return supabase.from('fees').delete().eq('id', id)
+}
+
+export async function markFeePaid(id: string, amount: number, method: string) {
+  return supabase.from('fees').update({
+    status: 'paid',
+    paid_amount: amount,
+    paid_date: new Date().toISOString().slice(0, 10),
+    payment_method: method,
+  }).eq('id', id).select().single()
 }
 
 // ---- Access codes ----

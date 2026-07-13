@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
@@ -6,31 +6,33 @@ import { useAuthStore, useUIStore } from '@/store'
 import { cn } from '@/lib/utils'
 
 const studentNav = [
-  { href: '/dashboard/student', icon: '🏠', label: 'Dashboard' },
-  { href: '/dashboard/student/profile', icon: '👤', label: 'My Profile' },
-  { href: '/dashboard/student/marks', icon: '📊', label: 'My Marks' },
-  { href: '/dashboard/student/library', icon: '📚', label: 'Library' },
-  { href: '/dashboard/student/ai', icon: '🤖', label: 'AI Assistant' },
-  { href: '/dashboard/student/notifications', icon: '🔔', label: 'Notifications' },
+  { href: '/dashboard/student', icon: 'ðŸ ', label: 'Dashboard' },
+  { href: '/dashboard/student/profile', icon: 'ðŸ‘¤', label: 'My Profile' },
+  { href: '/dashboard/student/marks', icon: 'ðŸ“Š', label: 'My Marks' },
+  { href: '/dashboard/student/fees', icon: 'ðŸ’³', label: 'My Fees' },
+  { href: '/dashboard/student/library', icon: 'ðŸ“š', label: 'Library' },
+  { href: '/dashboard/student/ai', icon: 'ðŸ¤–', label: 'AI Assistant' },
+  { href: '/dashboard/student/notifications', icon: 'ðŸ””', label: 'Notifications' },
 ]
 
 const teacherNav = [
-  { href: '/dashboard/teacher', icon: '🏠', label: 'Dashboard' },
-  { href: '/dashboard/teacher/roster', icon: '👥', label: 'My Students' },
-  { href: '/dashboard/teacher/marks', icon: '📝', label: 'Marks Entry' },
-  { href: '/dashboard/teacher/reports', icon: '📊', label: 'Reports' },
-  { href: '/dashboard/teacher/library', icon: '📚', label: 'Library' },
-  { href: '/dashboard/teacher/ai-calculator', icon: '🤖', label: 'AI Calculator' },
+  { href: '/dashboard/teacher', icon: 'ðŸ ', label: 'Dashboard' },
+  { href: '/dashboard/teacher/roster', icon: 'ðŸ‘¥', label: 'My Students' },
+  { href: '/dashboard/teacher/marks', icon: 'ðŸ“', label: 'Marks Entry' },
+  { href: '/dashboard/teacher/reports', icon: 'ðŸ“Š', label: 'Reports' },
+  { href: '/dashboard/teacher/library', icon: 'ðŸ“š', label: 'Library' },
+  { href: '/dashboard/teacher/ai-calculator', icon: 'ðŸ¤–', label: 'AI Calculator' },
 ]
 
 const adminNav = [
-  { href: '/dashboard/admin', icon: '🏠', label: 'Dashboard' },
-  { href: '/dashboard/admin/students', icon: '🎓', label: 'Students' },
-  { href: '/dashboard/admin/users', icon: '👥', label: 'Users' },
-  { href: '/dashboard/admin/analytics', icon: '📈', label: 'Analytics' },
-  { href: '/dashboard/admin/library', icon: '📚', label: 'Library' },
-  { href: '/dashboard/admin/codes', icon: '🔐', label: 'Access Codes' },
-  { href: '/dashboard/admin/export', icon: '📤', label: 'Export Data' },
+  { href: '/dashboard/admin', icon: 'ðŸ ', label: 'Dashboard' },
+  { href: '/dashboard/admin/students', icon: 'ðŸŽ“', label: 'Students' },
+  { href: '/dashboard/admin/fees', icon: 'ðŸ’³', label: 'Fee Management' },
+  { href: '/dashboard/admin/users', icon: 'ðŸ‘¥', label: 'Users' },
+  { href: '/dashboard/admin/analytics', icon: 'ðŸ“ˆ', label: 'Analytics' },
+  { href: '/dashboard/admin/library', icon: 'ðŸ“š', label: 'Library' },
+  { href: '/dashboard/admin/codes', icon: 'ðŸ”', label: 'Access Codes' },
+  { href: '/dashboard/admin/export', icon: 'ðŸ“¤', label: 'Export Data' },
 ]
 
 export default function Sidebar() {
@@ -61,7 +63,7 @@ export default function Sidebar() {
           </div>
         )}
         <button onClick={toggleSidebar} className="ml-auto shrink-0 text-text-muted hover:text-gold transition-colors">
-          {sidebarCollapsed ? '›' : '‹'}
+          {sidebarCollapsed ? 'â€º' : 'â€¹'}
         </button>
       </div>
 

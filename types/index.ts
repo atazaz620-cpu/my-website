@@ -1,5 +1,5 @@
-// ============================================================
-// PAHORE ACADEMY — All TypeScript Types
+﻿// ============================================================
+// PAHORE ACADEMY â€” All TypeScript Types
 // ============================================================
 
 export type Role = 'student' | 'teacher' | 'admin'
@@ -87,6 +87,38 @@ export interface Notification {
   type: 'marks' | 'library' | 'system' | 'announcement'
   is_read: boolean
   created_at: string
+}
+
+export interface Fee {
+  id: string
+  student_id: string
+  month: string
+  amount: number
+  paid_amount: number
+  due_date: string | null
+  paid_date: string | null
+  status: 'paid' | 'unpaid' | 'partial'
+  payment_method: string | null
+  remarks: string | null
+  created_by: string | null
+  created_at: string
+  updated_at: string
+}
+
+export interface FeeWithProfile extends Fee {
+  student_profile?: Profile
+}
+
+export interface FeeFormData {
+  student_id: string
+  month: string
+  amount: number
+  due_date: string
+  status: 'paid' | 'unpaid' | 'partial'
+  paid_amount: number
+  paid_date: string
+  payment_method: string
+  remarks: string
 }
 
 export interface AccessCode {

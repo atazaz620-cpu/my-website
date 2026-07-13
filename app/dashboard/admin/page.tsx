@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 
 import { useEffect, useState } from 'react'
 import Sidebar from '@/components/layout/Sidebar'
@@ -57,7 +57,7 @@ export default function AdminDashboardPage() {
   return (
     <div className="min-h-screen bg-[#0A0F1C]">
       <Sidebar />
-      <Topbar title="Admin Dashboard" subtitle="Pahore Academy Mianwali — Command Centre" />
+      <Topbar title="Admin Dashboard" subtitle="Pahore Academy Mianwali â€” Command Centre" />
       <main className="pt-[60px] pl-[248px]">
         <div className="p-6">
           {/* Admin profile banner */}
@@ -69,7 +69,7 @@ export default function AdminDashboardPage() {
               </div>
               <div className="flex-1">
                 <h2 className="font-heading text-xl font-bold text-text-primary">{profile?.full_name}</h2>
-                <p className="text-text-muted text-sm">System Administrator · Pahore Academy Mianwali</p>
+                <p className="text-text-muted text-sm">System Administrator Â· Pahore Academy Mianwali</p>
                 <span className="badge-admin mt-1 inline-block">Admin</span>
               </div>
             </div>
@@ -78,12 +78,12 @@ export default function AdminDashboardPage() {
           {/* Stats grid */}
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 mb-6">
             {[
-              { label: 'Students', value: stats.students, icon: '🎓', color: '#C4B5FD' },
-              { label: 'Teachers', value: stats.teachers, icon: '📝', color: '#FCD9A0' },
-              { label: 'Admins', value: stats.admins, icon: '⚙️', color: '#FCA5A5' },
-              { label: 'Total Tests', value: stats.totalTests, icon: '📊', color: '#C9A84C' },
-              { label: 'Library Files', value: stats.libraryFiles, icon: '📚', color: '#C9A84C' },
-              { label: 'Avg Score', value: stats.avgScore + '%', icon: '📈', color: '#C9A84C' },
+              { label: 'Students', value: stats.students, icon: 'ðŸŽ“', color: '#C4B5FD' },
+              { label: 'Teachers', value: stats.teachers, icon: 'ðŸ“', color: '#FCD9A0' },
+              { label: 'Admins', value: stats.admins, icon: 'âš™ï¸', color: '#FCA5A5' },
+              { label: 'Total Tests', value: stats.totalTests, icon: 'ðŸ“Š', color: '#C9A84C' },
+              { label: 'Library Files', value: stats.libraryFiles, icon: 'ðŸ“š', color: '#C9A84C' },
+              { label: 'Avg Score', value: stats.avgScore + '%', icon: 'ðŸ“ˆ', color: '#C9A84C' },
             ].map(({ label, value, icon, color }) => (
               <div key={label} className="card text-center">
                 <span className="text-2xl">{icon}</span>
@@ -117,10 +117,11 @@ export default function AdminDashboardPage() {
               <h3 className="font-heading text-lg font-bold text-text-primary mb-4">Admin Actions</h3>
               <div className="space-y-2">
                 {[
-                  { href: '/dashboard/admin/students', icon: '🎓', label: 'Manage Students', desc: 'Add, edit, view all students' },
-                  { href: '/dashboard/admin/users', icon: '👥', label: 'User Management', desc: 'Manage roles and accounts' },
-                  { href: '/dashboard/admin/codes', icon: '🔐', label: 'Rotate Access Codes', desc: 'Update teacher/admin codes' },
-                  { href: '/dashboard/admin/export', icon: '📤', label: 'Export Data', desc: 'Download CSV reports' },
+                  { href: '/dashboard/admin/students', icon: 'ðŸŽ“', label: 'Manage Students', desc: 'Add, edit, view all students' },
+                  { href: '/dashboard/admin/fees', icon: 'ðŸ’³', label: 'Fee Management', desc: 'Track payments & dues' },
+                  { href: '/dashboard/admin/users', icon: 'ðŸ‘¥', label: 'User Management', desc: 'Manage roles and accounts' },
+                  { href: '/dashboard/admin/codes', icon: 'ðŸ”', label: 'Rotate Access Codes', desc: 'Update teacher/admin codes' },
+                  { href: '/dashboard/admin/export', icon: 'ðŸ“¤', label: 'Export Data', desc: 'Download CSV reports' },
                 ].map(({ href, icon, label, desc }) => (
                   <Link key={href} href={href}
                     className="flex items-center gap-3 p-3 rounded-xl transition-colors group"
@@ -130,7 +131,7 @@ export default function AdminDashboardPage() {
                       <p className="text-text-primary text-sm font-medium group-hover:text-gold transition-colors">{label}</p>
                       <p className="text-text-muted text-xs">{desc}</p>
                     </div>
-                    <span className="ml-auto text-text-muted group-hover:text-gold transition-colors">→</span>
+                    <span className="ml-auto text-text-muted group-hover:text-gold transition-colors">â†’</span>
                   </Link>
                 ))}
               </div>
